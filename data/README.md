@@ -10,7 +10,7 @@ rawtext/yaheiB/train/0001.png
 rawtext/yaheiB/train/0706.png
 rawtext/yaheiB/train/0707.png
 ```
-#### 76 Chinese characters and 62 English letters for testing
+#### 76 Chinese characters, 10 Arabic numerals and 52 English letters for testing
 ```
 rawtext/yaheiB/val/0708.png
 rawtext/yaheiB/val/0709.png
