@@ -73,32 +73,72 @@ sh ../script/launch_test.sh
 
 - Train G_B with default parameters
 ```
-python train.py 
+python trainSketchModule.py \
+--text_path ../data/rawtext/yaheiB/train --text_datasize 708 \
+--augment_text_path ../data/rawtext/augment --augment_text_datasize 5 \
+--batchsize 16 --Btraining_num 12800 \
+--save_GB_name ../save/GB.ckpt \
+--gpu
+```
+or just modifying and running
+```
+sh ../script/launch_test.sh
 ```
 Saved model can be found at `../save/`
 - Use `--help` to view more training options
 ```
-python train.py --help
+python trainSketchModule.py --help
 ```
   
-### Oneshot Training
+### Training Structure Transfer G_S
 
-- Download a pre-trained model from [[Google Drive]](https://drive.google.com/file/d/1pNOE4COeoXp_-N4IogNS-GavCBbZJtw1/view?usp=sharing) or [[Baidu Cloud]](https://pan.baidu.com/s/1yK6wM0famUwu25s1v92Emw) to `../save/`
-  - Specify the pretrained model to load using the option `--load_model_name`
-
-- Finetune TET-GAN on a new style/glyph image pair (supervised oneshot training)
+- Download pre-trained G_B model from [[Google Drive]](https://drive.google.com/open?id=1gjHR39deUSPChtRbKAD80waoQFTiXyMs) or [[Baidu Cloud]](https://pan.baidu.com/s/11LVKWAd6BCgWQqM6SZByEQ) to `../save/` or use a saved model obtained by trainSketchModule.py
+- Train G_S with default parameters
 ```
-python oneshotfinetune.py --style_name ../data/oneshotstyle/1-train.png
+python trainStructureTransfer.py \
+--style_name ../data/style/fire.png \
+--batchsize 16 --Straining_num 2560 \
+--step1_epochs 30 --step2_epochs 40 --step3_epochs 80 \
+--scale_num 4 \
+--Sanglejitter \
+--save_path ../save --save_name fire \
+--text_path ../data/rawtext/yaheiB/train --text_datasize 708 \
+--load_GB_name ../save/GB-iccv.ckpt \
+--gpu
+```
+or just modifying and running
+```
+sh ../script/launch_ShapeMGAN_structure.sh
 ```
 Saved model can be found at `../save/`
-- Finetune TET-GAN on a new style image without its glyph counterpart (unsupervised oneshot training)
+- Use `--help` to view more training options
 ```
-python oneshotfinetune.py --style_name ../data/oneshotstyle/1-train.png --supervise 0
+python trainStructureTransfer.py --help
+```
+
+### Training Texture Transfer G_T
+
+- Download pre-trained G_S model from [[Google Drive]](https://drive.google.com/open?id=1gjHR39deUSPChtRbKAD80waoQFTiXyMs) or [[Baidu Cloud]](https://pan.baidu.com/s/11LVKWAd6BCgWQqM6SZByEQ) to `../save/` or use a saved model obtained by trainStructureTransfer.py
+- Train G_T with default parameters
+```
+python trainTextureTransfer.py \
+--style_name ../data/style/fire.png \
+--batchsize 4 --Ttraining_num 800 \
+--texture_step1_epochs 40 \
+--Tanglejitter --style_loss \
+--save_path ../save --save_name fire \
+--text_path ../data/rawtext/yaheiB/train --text_datasize 708 \
+--load_GS_name ../save/fire-GS.ckpt \
+--gpu
+```
+or just modifying and running
+```
+sh ../script/launch_ShapeMGAN_texture.sh
 ```
 Saved model can be found at `../save/`
-- Use `--help` to view more finetuning options
+- Use `--help` to view more training options
 ```
-python oneshotfinetune.py --help
+python trainTextureTransfer.py --help
 ```
 
 ### Contact
