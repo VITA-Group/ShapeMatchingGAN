@@ -24,3 +24,9 @@ augment/0000.png
 ...
 augment/0004.png
 ```
+#### style images ((X,Y) pair) for training Shape Matching GAN 
+```
+style/fire.png
+...
+style/maple.png
+```
