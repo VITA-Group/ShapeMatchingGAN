@@ -15,7 +15,7 @@ yaheiB/train/0707.png
 yaheiB/val/0708.png
 yaheiB/val/0709.png
 ...
-yaheiB/val/0706.png
+yaheiB/val/0835.png
 yaheiB/val/0836.png
 ```
 #### 5 augmented images for robust training
