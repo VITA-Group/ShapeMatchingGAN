@@ -72,6 +72,7 @@ sh ../script/launch_test.sh
 - Download text dataset from [[Google Drive]](https://drive.google.com/open?id=1gjHR39deUSPChtRbKAD80waoQFTiXyMs) or [[Baidu Cloud]](https://pan.baidu.com/s/11LVKWAd6BCgWQqM6SZByEQ) to `../data/`
 
 - Train G_B with default parameters
+  - Adding augmented images to the training set can make G_B more robust
 ```
 python trainSketchModule.py \
 --text_path ../data/rawtext/yaheiB/train --text_datasize 708 \
@@ -92,8 +93,10 @@ python trainSketchModule.py --help
   
 ### Training Structure Transfer G_S
 
-- Download pre-trained G_B model from [[Google Drive]](https://drive.google.com/open?id=1gjHR39deUSPChtRbKAD80waoQFTiXyMs) or [[Baidu Cloud]](https://pan.baidu.com/s/11LVKWAd6BCgWQqM6SZByEQ) to `../save/` or use a saved model obtained by trainSketchModule.py
 - Train G_S with default parameters
+  - step1: G_S is first trained with a fixed <i>l</i> = 1 to learn the greatest deformation
+  - step2: we then use <i>l</i> ∈ {0, 1} to learn two extremes
+  - step3: G_S is tuned on <i>l</i> ∈ {i/K}, i=0,...,K where K = 3 (i.e. --scale_num 4)
 ```
 python trainStructureTransfer.py \
 --style_name ../data/style/fire.png \
@@ -102,8 +105,6 @@ python trainStructureTransfer.py \
 --scale_num 4 \
 --Sanglejitter \
 --save_path ../save --save_name fire \
---text_path ../data/rawtext/yaheiB/train --text_datasize 708 \
---load_GB_name ../save/GB-iccv.ckpt \
 --gpu
 ```
 or just modifying and running
@@ -111,6 +112,10 @@ or just modifying and running
 sh ../script/launch_ShapeMGAN_structure.sh
 ```
 Saved model can be found at `../save/`
+- To preserve the glyph legibility (Eq. (7) in the paper), use option `--glyph_preserve`
+  - need to specify the text dataset `--text_path ../data/rawtext/yaheiB/train` and `--text_datasize 708`
+  - need to load pre-trained G_B model `--load_GB_name ../save/GB-iccv.ckpt`
+  - in most cases, `--glyph_preserve` is not necessary, since one can alternatively use a smaller <i>l</i>
 - Use `--help` to view more training options
 ```
 python trainStructureTransfer.py --help
@@ -120,26 +125,35 @@ python trainStructureTransfer.py --help
 
 - Download pre-trained G_S model from [[Google Drive]](https://drive.google.com/open?id=1gjHR39deUSPChtRbKAD80waoQFTiXyMs) or [[Baidu Cloud]](https://pan.baidu.com/s/11LVKWAd6BCgWQqM6SZByEQ) to `../save/` or use a saved model obtained by trainStructureTransfer.py
 - Train G_T with default parameters
+  - for some complicated styles, training without `--Tanglejitter` will be a good option
 ```
 python trainTextureTransfer.py \
 --style_name ../data/style/fire.png \
 --batchsize 4 --Ttraining_num 800 \
 --texture_step1_epochs 40 \
---Tanglejitter --style_loss \
+--Tanglejitter \
 --save_path ../save --save_name fire \
---text_path ../data/rawtext/yaheiB/train --text_datasize 708 \
---load_GS_name ../save/fire-GS.ckpt \
 --gpu
 ```
 or just modifying and running
 ```
 sh ../script/launch_ShapeMGAN_texture.sh
 ```
+- To train with style loss, use option `--style_loss`
+  - need to specify the text dataset `--text_path ../data/rawtext/yaheiB/train` and `--text_datasize 708`
+  - need to load pre-trained G_S model `--load_GS_name ../save/fire-GS.ckpt`
+  - adding `--style_loss` can slightly improve the texture details
 Saved model can be found at `../save/`
 - Use `--help` to view more training options
 ```
 python trainTextureTransfer.py --help
 ```
+
+### More
+
+Three training examples are in the IPythonNotebook ShapeMatchingGAN.ipynb
+
+Have fun :-)
 
 ### Contact
 
