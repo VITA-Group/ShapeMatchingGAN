@@ -1,0 +1,1 @@
+- Text dataset for training Sketch Module can be downloaded from [[Google Drive]](https://drive.google.com/) or [[Baidu Cloud]](https://pan.baidu.com/)
