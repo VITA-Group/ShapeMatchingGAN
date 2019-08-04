@@ -57,9 +57,9 @@ def main():
         os.mkdir(opts.result_dir)         
     for i in range(len(result)):     
         if label == -1:
-            result_filename = os.path.join(opts.result_dir, (opts.name+'.png'))
-        else:
             result_filename = os.path.join(opts.result_dir, (opts.name+'_'+str(i)+'.png'))
+        else:
+            result_filename = os.path.join(opts.result_dir, (opts.name+'.png'))
         save_image(result[i][0], result_filename)
 
 if __name__ == '__main__':
