@@ -1,6 +1,6 @@
 ## Dataset information
 ### Data Download
-- Text dataset for training Sketch Module can be downloaded from [[Google Drive]](https://drive.google.com/) or [[Baidu Cloud]](https://pan.baidu.com/)
+- Text dataset for training Sketch Module can be downloaded from [[Google Drive]](https://drive.google.com/open?id=1gjHR39deUSPChtRbKAD80waoQFTiXyMs) or [[Baidu Cloud]](https://pan.baidu.com/s/11LVKWAd6BCgWQqM6SZByEQ)
 ### Images are arranged in this way 
 #### 708 Chinese characters for training
 ```
