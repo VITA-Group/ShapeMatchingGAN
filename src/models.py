@@ -101,7 +101,7 @@ class myGBlock(nn.Module):
     def forward(self, x):
         return x+self.bn(self.conv(self.pad(self.myconv(x))))
 
-# Controlaable ResBlock
+# Controllable ResBlock
 class myGCombineBlock(nn.Module):
     def __init__(self, num_filter=128, p=0.0):
         super(myGCombineBlock, self).__init__()
