@@ -97,6 +97,7 @@ python trainSketchModule.py --help
   - step1: G_S is first trained with a fixed <i>l</i> = 1 to learn the greatest deformation
   - step2: we then use <i>l</i> ∈ {0, 1} to learn two extremes
   - step3: G_S is tuned on <i>l</i> ∈ {i/K}, i=0,...,K where K = 3 (i.e. --scale_num 4)
+  - for structure with directional patterns, training without `--Sanglejitter` will be a good option
 ```
 python trainStructureTransfer.py \
 --style_name ../data/style/fire.png \
@@ -125,7 +126,7 @@ python trainStructureTransfer.py --help
 
 - Download pre-trained G_S model from [[Google Drive]](https://drive.google.com/open?id=1gjHR39deUSPChtRbKAD80waoQFTiXyMs) or [[Baidu Cloud]](https://pan.baidu.com/s/11LVKWAd6BCgWQqM6SZByEQ) to `../save/` or use a saved model obtained by trainStructureTransfer.py
 - Train G_T with default parameters
-  - for some complicated styles, training without `--Tanglejitter` will be a good option
+  - for complicated style or style with directional patterns, training without `--Tanglejitter` will be a good option
 ```
 python trainTextureTransfer.py \
 --style_name ../data/style/fire.png \
@@ -139,11 +140,11 @@ or just modifying and running
 ```
 sh ../script/launch_ShapeMGAN_texture.sh
 ```
+Saved model can be found at `../save/`
 - To train with style loss, use option `--style_loss`
   - need to specify the text dataset `--text_path ../data/rawtext/yaheiB/train` and `--text_datasize 708`
   - need to load pre-trained G_S model `--load_GS_name ../save/fire-GS.ckpt`
   - adding `--style_loss` can slightly improve the texture details
-Saved model can be found at `../save/`
 - Use `--help` to view more training options
 ```
 python trainTextureTransfer.py --help
