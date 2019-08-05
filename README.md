@@ -36,7 +36,7 @@ cd ShapeMatchingGAN/src
 - Artisic text style transfer using <i>fire</i> style with scale 0.0
   - Results can be found in `../output/`
 
-<img src="https://github.com/williamyang1991/TET-GAN/blob/master/imgs/example.jpg" width="50%" height="50%">
+<img src="https://github.com/williamyang1991/ShapeMatchingGAN/blob/master/imgs/test.jpg" width="60%" height="60%">
 
 ```
 python test.py \
