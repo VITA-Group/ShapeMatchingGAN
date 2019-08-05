@@ -24,12 +24,10 @@
 This is a pytorch implementation of the paper.
 
 Shuai Yang, Zhangyang Wang, Zhaowen Wang, Ning Xu, Jiaying Liu and Zongming Guo.
-
 Controllable Artistic Text Style Transfer via Shape-Matching GAN, 
+accepted by International Conference on Computer Vision (ICCV), 2019.
 
-Accepted by International Conference on Computer Vision (ICCV), 2019.
-
-[[Project]](https://williamyang1991.github.io/projects/ICCV2019/SMGAN.html) | [[Paper]](https://arxiv.org/abs/1905.01354) 
+[[Project]](https://williamyang1991.github.io/projects/ICCV2019/SMGAN.html) | [[Paper]](https://arxiv.org/abs/1905.01354) | More about artistic text style transfer [[Link]](https://williamyang1991.github.io/index.html#publications)
 
 It is provided for educational/research purpose only. Please consider citing our paper if you find the software useful for your work.
 
