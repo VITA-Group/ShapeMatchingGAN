@@ -84,7 +84,7 @@ sh ../script/launch_test.sh
 
 ## Training Examples
 
-### Training Skecth Module G_B
+### Training Sketch Module G_B
 
 - Download text dataset from [[Google Drive]](https://drive.google.com/open?id=1gjHR39deUSPChtRbKAD80waoQFTiXyMs) or [[Baidu Cloud]](https://pan.baidu.com/s/11LVKWAd6BCgWQqM6SZByEQ) to `../data/`
 
