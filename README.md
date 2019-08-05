@@ -8,7 +8,7 @@
   <td width="18.30%" align="right"><img src="https://github.com/williamyang1991/ShapeMatchingGAN/blob/master/imgs/teaser-d.gif" width="99%" ></td>
  </tr>
  <tr align="center">
-  <td>(a) source</td><td>(b) adjustable stylistic degree of glyph</td><td>(c) stylized text</td><td>(d) application</td>
+  <td>(a) source</td><td>(b) adjust stylistic degree of glyph</td><td>(c) stylized text</td><td>(d) application</td>
 </tr>					 
  </table>
  <table border="0" width='100%'>
