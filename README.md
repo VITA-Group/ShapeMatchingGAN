@@ -100,7 +100,7 @@ python trainSketchModule.py \
 ```
 or just modifying and running
 ```
-sh ../script/launch_test.sh
+sh ../script/launch_SketchModule.sh
 ```
 Saved model can be found at `../save/`
 - Use `--help` to view more training options
