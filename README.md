@@ -44,7 +44,7 @@ It is provided for educational/research purpose only. Please consider citing our
 #### Install
 - Clone this repo:
 ```
-git clone https://github.com/williamyang1991/ShapeMatchingGAN.git
+git clone https://github.com/TAMU-VITA/ShapeMatchingGAN.git
 cd ShapeMatchingGAN/src
 ```
 ## Testing Example
