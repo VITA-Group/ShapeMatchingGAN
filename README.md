@@ -8,7 +8,7 @@
   <td width="18.6%"><img src="https://github.com/williamyang1991/ShapeMatchingGAN/blob/master/imgs/teaser-d.gif" width="99%" ></td>
  </tr>
  <tr align="center">
-  <td>(a) source</td><td>(b) adjust stylistic degree of glyph</td><td>(c) stylized text</td><td>(d) application</td>
+  <td>source</td><td>adjustable stylistic degree of glyph</td><td>stylized text</td><td>application</td>
 </tr>					 
  </table>
  <table border="0" width='100%'>
@@ -17,7 +17,7 @@
   <td width="50%"><img src="https://github.com/williamyang1991/ShapeMatchingGAN/blob/master/imgs/teaser-f.gif" alt="" width="99%" ></td>						
  </tr>					 
  <tr align="center">
-  <td>(e) liquid artistic text rendering</td><td>(f) smoke artistic text rendering</td>
+  <td>liquid artistic text rendering</td><td>smoke artistic text rendering</td>
 </tr>	
 </table>
 
