@@ -172,6 +172,16 @@ Three training examples are in the IPythonNotebook ShapeMatchingGAN.ipynb
 
 Have fun :-)
 
+### Try with your own style images
+
+- Style image preparation 
+  - Applicable style types: To make the stylized text easy to recognize, it is desirable to have a certain distinction between the text and the background. If the texture has no distinct shape, the generated stylized text will be mixed with the background. Therefore, textures with distinct shapes as the reference style are recommended.
+  - Prepare (X,Y): Use Image Matting Algorithm or the Quick Selection Tool in Photoshop to obtain the black and white structure map X (i.e. foreground mask) of the style image Y. 
+  - Prepare distance-based structure map: Use utils.text_image_preprocessing to transform black and white X into distance-based X.
+  - Concatenate distance-based X with Y as the format of images in `../data/style/` and copy the result to `../data/style/`.
+
+<img src="https://github.com/TAMU-VITA/ShapeMatchingGAN/blob/master/imgs/failure.jpg" width="90%" height="90%">
+
 ### Contact
 
 Shuai Yang
