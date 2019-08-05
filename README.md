@@ -1,6 +1,25 @@
 # ShapeMatchingGAN
 
-<img src="https://github.com/williamyang1991/TET-GAN/blob/master/imgs/teaser.png" width="80%" height="80%">
+<table border="0" width='100%'>
+ <tr align="center">
+  <td width="13.55%" align="left"><img src="https://github.com/williamyang1991/ShapeMatchingGAN/blob/master/imgs/teaser-a.jpg" width="99%" ></td>
+  <td width="33.67%"><img src="https://github.com/williamyang1991/ShapeMatchingGAN/blob/master/imgs/teaser-b.png" width="99%" ></td>
+  <td width="34.48%"><img src="https://github.com/williamyang1991/ShapeMatchingGAN/blob/master/imgs/teaser-c.gif" width="99%" ></td>	
+  <td width="18.30%" align="right"><img src="https://github.com/williamyang1991/ShapeMatchingGAN/blob/master/imgs/teaser-d.gif" width="99%" ></td>
+ </tr>
+ <tr align="center">
+  <td>(a) source</td><td>(b) adjustable stylistic degree of glyph</td><td>(c) stylized text</td><td>(d) application</td>
+</tr>					 
+ </table>
+ <table border="0" width='100%'>
+ <tr align="center">
+  <td align="left" width="50%"><img src="https://github.com/williamyang1991/ShapeMatchingGAN/blob/master/imgs/teaser-e.gif" alt="" width="99%" ></td>	
+  <td align="right" width="50%"><img src="https://github.com/williamyang1991/ShapeMatchingGAN/blob/master/imgs/teaser-f.gif" alt="" width="99%" ></td>						
+ </tr>					 
+ <tr align="center">
+  <td>(e) liquid artistic text rendering</td><td>(f) smoke artistic text rendering</td>
+</tr>	
+</table>
 
 This is a pytorch implementation of the paper.
 
