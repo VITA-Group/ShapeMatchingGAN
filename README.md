@@ -124,7 +124,6 @@ python trainStructureTransfer.py --help
 
 ### Training Texture Transfer G_T
 
-- Download pre-trained G_S model from [[Google Drive]](https://drive.google.com/open?id=1gjHR39deUSPChtRbKAD80waoQFTiXyMs) or [[Baidu Cloud]](https://pan.baidu.com/s/11LVKWAd6BCgWQqM6SZByEQ) to `../save/` or use a saved model obtained by trainStructureTransfer.py
 - Train G_T with default parameters
   - for complicated style or style with directional patterns, training without `--Tanglejitter` will be a good option
 ```
