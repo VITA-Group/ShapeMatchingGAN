@@ -53,11 +53,11 @@ class TextureGenerator(nn.Module):
         modelList.append(myTConv(ngf*2, 2, ngf))
         modelList.append(myTConv(ngf*4, 2, ngf*2))
         
-        for n in range(n_layers/2):
+        for n in range(int(n_layers/2)):
             modelList.append(myTBlock(ngf*4, p=0.0))
         # dropout to make model more robust
         modelList.append(myTBlock(ngf*4, p=0.5))
-        for n in range(n_layers/2+1,n_layers):
+        for n in range(int(n_layers/2)+1,n_layers):
             modelList.append(myTBlock(ngf*4, p=0.0))  
         
         modelList.append(ConvTranspose2d(out_channels=ngf*2, kernel_size=4, stride=2, padding=0, in_channels=ngf*4))
@@ -130,12 +130,12 @@ class GlyphGenerator(nn.Module):
         encoder.append(myGConv(ngf*4, 2, ngf*2))
 
         transformer = []
-        for n in range(n_layers/2-1):
+        for n in range(int(n_layers/2)-1):
             transformer.append(myGCombineBlock(ngf*4,p=0.0))
         # dropout to make model more robust    
         transformer.append(myGCombineBlock(ngf*4,p=0.5))
         transformer.append(myGCombineBlock(ngf*4,p=0.5))
-        for n in range(n_layers/2+1,n_layers):
+        for n in range(int(n_layers/2)+1,n_layers):
             transformer.append(myGCombineBlock(ngf*4,p=0.0))  
         
         decoder = []
