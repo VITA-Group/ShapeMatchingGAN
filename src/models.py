@@ -53,7 +53,7 @@ class TextureGenerator(nn.Module):
         modelList.append(myTConv(ngf*2, 2, ngf))
         modelList.append(myTConv(ngf*4, 2, ngf*2))
         
-        for n in range(int(n_layers/2)):
+        for n in range(int(n_layers/2)): 
             modelList.append(myTBlock(ngf*4, p=0.0))
         # dropout to make model more robust
         modelList.append(myTBlock(ngf*4, p=0.5))
