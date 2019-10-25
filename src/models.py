@@ -174,6 +174,7 @@ class GlyphGenerator(nn.Module):
 class myBlur(nn.Module):
     def __init__(self, kernel_size=121, channels=3):
         super(myBlur, self).__init__()
+        kernel_size = int(int(kernel_size)/2*2)+1
         self.kernel_size=kernel_size
         self.channels = channels
         self.GF = nn.Conv2d(in_channels=channels, out_channels=channels,
