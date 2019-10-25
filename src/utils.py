@@ -78,7 +78,7 @@ def weights_init(m):
 # prepare batched filenames of all training data
 # [[list of file names in one batch],[list of file names in one batch],...,[]]
 def load_train_batchfnames(path, batch_size, usenum=3, trainnum=100000):
-    trainnum = (trainnum / batch_size) * batch_size
+    trainnum = int((int(trainnum) / int(batch_size)) * batch_size)
     fnames = [('%04d.png' % (i%usenum)) for i in range(trainnum)]
     random.shuffle(fnames)
     trainbatches = [([]) for _ in range(trainnum/batch_size)]
