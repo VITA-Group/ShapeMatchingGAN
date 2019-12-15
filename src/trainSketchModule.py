@@ -29,7 +29,7 @@ def main():
         fnames2 = load_train_batchfnames(opts.augment_text_path, opts.batchsize, 
                                         opts.augment_text_datasize, trainnum=opts.Btraining_num)
         for ii in range(len(fnames)):
-            fnames[ii][0:opts.batchsize/2-1] = fnames2[ii][0:opts.batchsize/2-1]
+            fnames[ii][0:opts.batchsize//2-1] = fnames2[ii][0:opts.batchsize//2-1]
         for fname in fnames:
             itr += 1
             t = prepare_text_batch(fname, anglejitter=True)

@@ -81,9 +81,9 @@ def load_train_batchfnames(path, batch_size, usenum=3, trainnum=100000):
     trainnum = int((int(trainnum) / int(batch_size)) * batch_size)
     fnames = [('%04d.png' % (i%usenum)) for i in range(trainnum)]
     random.shuffle(fnames)
-    trainbatches = [([]) for _ in range(trainnum/batch_size)]
+    trainbatches = [([]) for _ in range(trainnum//batch_size)]
     count = 0
-    for i in range(trainnum/batch_size):
+    for i in range(trainnum//batch_size):
         traindatas = []
         for j in range(batch_size):
             traindatas += [os.path.join(path, fnames[count])]
