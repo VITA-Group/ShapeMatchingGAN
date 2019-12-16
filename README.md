@@ -49,7 +49,7 @@ cd ShapeMatchingGAN/src
 ```
 ## Testing Example
 
-- Download pre-trained models from [[Google Drive]](https://drive.google.com/open?id=1gjHR39deUSPChtRbKAD80waoQFTiXyMs) or [[Baidu Cloud]](https://pan.baidu.com/s/11LVKWAd6BCgWQqM6SZByEQ) to `../save/`
+- Download pre-trained models from [[Google Drive]](https://drive.google.com/open?id=1gjHR39deUSPChtRbKAD80waoQFTiXyMs) or [[Baidu Cloud]](https://pan.baidu.com/s/1tvTCig4OQhixX_EzSzYQSg)(code:rjpi) to `../save/`
 - Artisic text style transfer using <i>fire</i> style with scale 0.0
   - Results can be found in `../output/`
 
@@ -86,7 +86,7 @@ sh ../script/launch_test.sh
 
 ### Training Sketch Module G_B
 
-- Download text dataset from [[Google Drive]](https://drive.google.com/open?id=1gjHR39deUSPChtRbKAD80waoQFTiXyMs) or [[Baidu Cloud]](https://pan.baidu.com/s/11LVKWAd6BCgWQqM6SZByEQ) to `../data/`
+- Download text dataset from [[Google Drive]](https://drive.google.com/open?id=1gjHR39deUSPChtRbKAD80waoQFTiXyMs) or [[Baidu Cloud]](https://pan.baidu.com/s/1tvTCig4OQhixX_EzSzYQSg)(code:rjpi) to `../data/`
 
 - Train G_B with default parameters
   - Adding augmented images to the training set can make G_B more robust
