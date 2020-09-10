@@ -43,12 +43,12 @@ def main():
     X = to_var(X) if opts.gpu else X
     Noise = to_var(Noise) if opts.gpu else Noise
     for epoch in range(opts.texture_step1_epochs):
-        for i in range(opts.Ttraining_num/opts.batchsize):
+        for i in range(opts.Ttraining_num//opts.batchsize):
             x, y = cropping_training_batches(X, Y, Noise, opts.batchsize, 
                                       opts.Tanglejitter, opts.subimg_size, opts.subimg_size)
             losses = netShapeM.texture_one_pass(x, y)
             print('Step1, Epoch [%02d/%02d][%03d/%03d]' %(epoch+1, opts.texture_step1_epochs, i+1,
-                                                         opts.Ttraining_num/opts.batchsize), end=': ')
+                                                         opts.Ttraining_num//opts.batchsize), end=': ')
             print('LDadv: %+.3f, LGadv: %+.3f, Lrec: %+.3f, Lsty: %+.3f'%(losses[0], losses[1], losses[2], losses[3])) 
     if opts.style_loss:
         fnames = load_train_batchfnames(opts.text_path, opts.batchsize, 
