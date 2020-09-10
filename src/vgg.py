@@ -68,8 +68,8 @@ def get_GRAM(filename, VGGFeatures, batchsize, gpu=True):
         param.requires_grad = False
     
     img = load_image(filename)
-    target = img[:,:,:,img.size(3)/2:img.size(3)]
-    target_mask = img[:,:,:,0:img.size(3)/2]
+    target = img[:,:,:,img.size(3)//2:img.size(3)]
+    target_mask = img[:,:,:,0:img.size(3)//2]
     if gpu:
         getmask.cuda()
         target = to_var(target)
