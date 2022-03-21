@@ -180,7 +180,7 @@ Have fun :-)
   - Prepare distance-based structure map: Use utils.text_image_preprocessing to transform black and white X into distance-based X.
   - Concatenate distance-based X with Y as the format of images in `../data/style/` and copy the result to `../data/style/`.
 
-<img src="https://github.com/TAMU-VITA/ShapeMatchingGAN/blob/master/imgs/failure.jpg" width="90%" height="90%">
+<img src="https://github.com/williamyang1991/ShapeMatchingGAN/blob/master/imgs/failure.jpg" width="90%" height="90%">
 
 ### Contact
 
