@@ -29,7 +29,7 @@ accepted by International Conference on Computer Vision (ICCV), 2019.
 
 [[Project]](https://williamyang1991.github.io/projects/ICCV2019/SMGAN.html) | [[Paper]](https://arxiv.org/abs/1905.01354) | More about artistic text style transfer [[Link]](https://williamyang1991.github.io/index.html#publications)
 
-It is provided for educational/research purpose only. Please consider citing our paper if you find the software useful for your work.
+Please consider citing our paper if you find the software useful for your work.
 
 
 ## Usage: 
